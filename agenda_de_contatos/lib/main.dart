@@ -1,4 +1,5 @@
 import 'package:agenda_de_contatos/screens/color_schemes.g.dart';
+import 'package:agenda_de_contatos/screens/home/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -6,7 +7,9 @@ void main() {
     MaterialApp(
       title: "Agenda de contatos",
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      routes: {
+        "/": (context) => const Home(),
+      },
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: lightColorScheme,
