@@ -11,7 +11,9 @@ class Home extends StatelessWidget {
         title: const Text("Meus contatos"),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, "/new");
+        },
         child: const Icon(Icons.add),
       ),
       body: ListView.separated(

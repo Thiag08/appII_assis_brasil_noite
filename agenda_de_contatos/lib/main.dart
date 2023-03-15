@@ -1,5 +1,6 @@
 import 'package:agenda_de_contatos/screens/color_schemes.g.dart';
 import 'package:agenda_de_contatos/screens/home/home.dart';
+import 'package:agenda_de_contatos/screens/new_contact/new_contact.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,6 +10,7 @@ void main() {
       debugShowCheckedModeBanner: false,
       routes: {
         "/": (context) => const Home(),
+        "/new": (context) => const NewContact()
       },
       theme: ThemeData(
         useMaterial3: true,
