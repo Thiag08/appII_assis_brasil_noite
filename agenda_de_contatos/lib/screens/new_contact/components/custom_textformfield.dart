@@ -19,13 +19,16 @@ class CustomTextFormField extends StatefulWidget {
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: InputDecoration(
-        label: Text(widget.label),
-        border: const OutlineInputBorder(),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: TextFormField(
+        decoration: InputDecoration(
+          label: Text(widget.label),
+          border: const OutlineInputBorder(),
+        ),
+        controller: widget.controller,
+        validator: widget.validator,
       ),
-      controller: widget.controller,
-      validator: widget.validator,
     );
   }
 }

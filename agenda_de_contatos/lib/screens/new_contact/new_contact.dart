@@ -12,6 +12,9 @@ class _NewContactState extends State<NewContact> {
   // Variáveis úteis
   final _formKey = GlobalKey<FormState>();
   final nameController = TextEditingController();
+  final lastNameController = TextEditingController();
+  final emailController = TextEditingController();
+  final phoneController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +52,41 @@ class _NewContactState extends State<NewContact> {
                   controller: nameController,
                   validator: (value) {
                     if (value != null && value.isEmpty) {
-                      return "O campo deve ser preenchido!!!";
+                      return "O campo nome não pode ficar em branco";
+                    }
+                    return null;
+                  },
+                ),
+                CustomTextFormField(
+                  label: "Sobrenome",
+                  controller: lastNameController,
+                  validator: (value) {
+                    if (value != null && value.isEmpty) {
+                      return "O sobrenome não pode ficar em branco";
+                    }
+                    return null;
+                  },
+                ),
+                CustomTextFormField(
+                  label: "Email",
+                  controller: emailController,
+                  validator: (value) {
+                    if (value != null && value.isEmpty) {
+                      return "O email não pode ficar em branco";
+                    } else if (value != null) {
+                      return "O email informado é inválido";
+                    }
+                    return null;
+                  },
+                ),
+                CustomTextFormField(
+                  label: "Telefone",
+                  controller: phoneController,
+                  validator: (value) {
+                    if (value != null && value.isEmpty) {
+                      return "O número de telefone não pode ficar em branco";
+                    } else if (value != null && value.length != 18) {
+                      return "O número de telefone é inválido";
                     }
                     return null;
                   },
